@@ -1,15 +1,25 @@
 function fibonacci(num) {
-// your code here
-	if (num === 0) {
-        return 0;
-    } else if (num === 1) {
-        return 1;
-    } else {
-        return fibonacci(num - 1) + fibonacci(num - 2);
-    }
-}
-const result = fibonacci(5);
-const fibonacciResultElement = document.getElementById("fibonacciResult");
-fibonacciResultElement.textContent = result;
+  if (num <= 0) {
+      return "Invalid input";
+  } else if (num === 1) {
+      return 0;
+  } else if (num === 2) {
+      return 1;
+  }
 
-module.exports = fibonacci;
+  let a = 0;
+  let b = 1;
+  let temp;
+
+  for (let i = 2; i < num; i++) {
+      temp = a + b;
+      a = b;
+      b = temp;
+  }
+
+  return b;
+}
+
+console.log(fibonacci(1));
+console.log(fibonacci(5));
+console.log(fibonacci(10));
