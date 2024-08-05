@@ -1,22 +1,15 @@
 function fibonacci(num) {
-    if (num === 0) return 0;
-    if (num === 1) return 1;
-
-    let a = 0, b = 1;
-    for (let i = 2; i <= num; i++) {
-        let temp = a + b;
-        a = b;
-        b = temp;
+// your code here
+	let a=0,b=1,c,i;
+    if(num===1)return a;
+	if( num===2)return b;
+    for(i=2;i<num;i++)
+    {
+    c=a + b;
+    a=b;
+    b=c;
     }
     return b;
 }
 
-function calculateFibonacci() {
-    const num = parseInt(document.getElementById('fibonacciInput').value);
-    if (isNaN(num) || num < 0 || num > 50) {
-        alert('Please enter a positive integer between 0 and 50.');
-        return;
-    }
-    const result = fibonacci(num);
-    document.getElementById('fibonacciResult').innerText = result;
-}
+module.exports = fibonacci;
